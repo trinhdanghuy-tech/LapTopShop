@@ -20,26 +20,30 @@
         <div class="col-md-6 col-12 mx-auto">
             <h3>Create a user</h3>
             <br>
-            <form:form action="/admin/user/create1" method="post" modelAttribute="user">
+            <form:form modelAttribute="user" method="post" action="/admin/user/create1">
                 <div class="mb-3">
-                    <form:label path="email">Email address</form:label>
-                    <form:input type="email" path="email" cssClass="form-control"/>
+                    <label>Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                    <div id="emailError" class="text-danger mt-1"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password" required>
                 </div>
                 <div class="mb-3">
-                    <form:label path="password">Password</form:label>
-                    <form:password type="password" path="password" cssClass="form-control"/>
+                    <label>Full Name</label>
+                    <form:input path="fullName" class="form-control"/>
                 </div>
                 <div class="mb-3">
-                    <form:label path="fullName">Full Name</form:label>
-                    <form:input path="fullName" cssClass="form-control"/>
+                    <label>Address</label>
+                    <form:input path="address" class="form-control"/>
                 </div>
                 <div class="mb-3">
-                    <form:label path="address">Address</form:label>
-                    <form:input path="address" cssClass="form-control"/>
-                </div>
-                <div class="mb-3">
-                    <form:label path="phone">Phone</form:label>
-                    <form:input path="phone" cssClass="form-control"/>
+                    <label class="form-label">Phone</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="ví dụ: 0901234567"
+                           required>
+                    <div id="phoneError" class="text-danger mt-1"></div>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form:form>

@@ -3,8 +3,10 @@ package vn.hoidanit.laptopshop.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import vn.hoidanit.laptopshop.domain.User;
 import vn.hoidanit.laptopshop.service.UserService;
 
 @Controller
@@ -26,12 +28,13 @@ public class UserController {
 
     @RequestMapping("/admin/user")
     public String getAdminPage(Model model) {
+        model.addAttribute("user", new User());
         return "admin/user/create";
     }
 
     @RequestMapping(value = "/admin/user/create1", method = RequestMethod.POST)
-    public String createUser(Model model) {
-        System.out.println("create user");
+    public String createUser(@ModelAttribute("user") User user) {
+        System.out.println("create user " + user);
         return "hello";
     }
 
