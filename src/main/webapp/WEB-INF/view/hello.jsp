@@ -17,7 +17,6 @@
 <h1>
     <h2>Chào bạn</h2>
     <button class="btn">Submit</button>
-    ${eric}
 </h1>
 </body>
 </html>

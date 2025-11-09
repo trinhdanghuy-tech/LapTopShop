@@ -20,22 +20,22 @@ public class UserController {
 
     @RequestMapping("/")
     public String getHomePage(Model model) {
+
         String test = this.userService.handleHello();
         model.addAttribute("eric", test);
-
         return "hello";
     }
 
-    @RequestMapping("/admin/user")
+    @RequestMapping(value = "/admin/user/create", method = RequestMethod.GET)
     public String getAdminPage(Model model) {
         model.addAttribute("user", new User());
         return "admin/user/create";
     }
 
-    @RequestMapping(value = "/admin/user/create1", method = RequestMethod.POST)
+    @RequestMapping(value = "/admin/user/create", method = RequestMethod.POST)
     public String createUser(@ModelAttribute("user") User user) {
         this.userService.handleSaveUser(user);
-        return "hello";
+        return "tableusers";
     }
 
 }
