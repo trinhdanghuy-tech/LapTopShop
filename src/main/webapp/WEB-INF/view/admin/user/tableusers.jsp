@@ -44,36 +44,19 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>
-                <button type="button" class="btn btn-success">View</button>
-                <button type="button" class="btn btn-warning">Update</button>
-                <button type="button" class="btn btn-danger">Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>
-                <button type="button" class="btn btn-success">View</button>
-                <button type="button" class="btn btn-warning">Update</button>
-                <button type="button" class="btn btn-danger">Delete</button>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry the Bird</td>
-            <td>huydeptrai@gmai.com</td>
-            <td>
-                <button type="button" class="btn btn-success">View</button>
-                <button type="button" class="btn btn-warning">Update</button>
-                <button type="button" class="btn btn-danger">Delete</button>
-            </td>
-        </tr>
+        <c:forEach items="${users1}" var="user">
+            <tr>
+                <th scope="row">${user.id}</th>
+                <td>${user.fullName}</td>
+                <td>${user.email}</td>
+                <td>
+                    <a href="/admin/user/${user.id}" class="btn btn-success btn-sm">View</a>
+                    <button type="button" class="btn btn-warning btn-sm">Update</button>
+                    <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+        </c:forEach>
+
         </tbody>
     </table>
 </div>
