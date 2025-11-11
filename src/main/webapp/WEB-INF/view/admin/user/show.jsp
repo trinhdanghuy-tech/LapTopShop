@@ -11,21 +11,6 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        .cross {
-            width: 100%;
-            height: 2px;
-            background-color: rgba(0, 0, 0, 0.1);
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-    </style>
 </head>
 <body>
 <div class="container mt-5">
@@ -43,14 +28,14 @@
                     User Information
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID : 1</li>
-                    <li class="list-group-item">Email: ${email}</li>
-                    <li class="list-group-item">Full Name:</li>
-                    <li class="list-group-item">Phone:</li>
-                    <li class="list-group-item">Address:</li>
+                    <li class="list-group-item">ID : ${user.id}</li>
+                    <li class="list-group-item">Email: ${user.email}</li>
+                    <li class="list-group-item">Full Name: ${user.fullName}</li>
+                    <li class="list-group-item">Phone: ${user.phone}</li>
+                    <li class="list-group-item">Address: ${user.address}</li>
                 </ul>
             </div>
-
+            <a href="/admin/user" class="btn btn-success mt-3">Back</a>
 
         </div>
     </div>
